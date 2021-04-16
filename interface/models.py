@@ -8,9 +8,9 @@ class Students(models.Model):
     student_class = models.CharField(max_length=20)
     student_name = models.CharField(max_length=30, default='Gun')
     student_number = models.IntegerField()
-    covid_checked = models.BooleanField()
+    covid_checked = models.BooleanField(default=False)
     student_description = models.TextField(max_length=500,default='lorem ispum')
-    covid_checked_2 = models.TextField(max_length=200)
+    covid_checked_2 = models.TextField(max_length=200,blank=True,null=True)
     image = models.ImageField(default='default.jpg', upload_to='student_pics')
 
 class Teachers(models.Model):
@@ -19,8 +19,8 @@ class Teachers(models.Model):
     teacher_name = models.CharField(max_length=20, default='teacher')
     teacher_no = models.IntegerField()
     teacher_description = models.TextField(max_length=500,default='lorem ispum')
-    covid_checked_2 = models.TextField(max_length=200)
-    covid_checked = models.BooleanField()
+    covid_checked_2 = models.TextField(max_length=200,blank=True,null=True)
+    covid_checked = models.BooleanField(default=False)
     image = models.ImageField(default='default.jpg', upload_to='teachers_pics')
 
 class Staffs(models.Model):
@@ -29,6 +29,6 @@ class Staffs(models.Model):
     job = models.CharField(max_length=30)
     job_desc = models.TextField(max_length=200,null=True, blank=True)
     staff_contact = models.TextField(max_length=200)
-    covid_checked = models.BooleanField()
-    covid_checked_2 = models.TextField(max_length=200)
+    covid_checked = models.BooleanField(default=False)
+    covid_checked_2 = models.TextField(max_length=200,blank=True,null=True)
     image = models.ImageField(default='job.jpg', upload_to='staff_pics')
